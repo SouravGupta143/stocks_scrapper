@@ -1,0 +1,124 @@
+{% extends 'base_template.html' %}
+
+{% block tsa %}
+
+            <table class="table table-bordered" style="overflow-x:auto;">
+                <thead>
+                  <tr>
+                    <th scope="col" colspan="2" style="text-align: center;">Price / Volume Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for keys,values in data1[1].items() %}
+                  <tr>
+                    <td>{{keys}}</td>
+                    <td>{{values}}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+        
+              <table class="table table-bordered" style="overflow-x:auto;">
+                <thead>
+                  <tr>
+                    <th scope="col" colspan="2" style="text-align: center;">Highs / Lows</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for keys,values in data1[2].items() %}
+                  <tr>
+                    <td>{{keys}}</td>
+                    <td>{{values}}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+         
+            <table class="table table-bordered" sstyle="overflow-x:auto;">
+                <thead>
+                  <tr>
+                    <th scope="col" colspan="3" style="text-align: center;">Key Moving Average </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for keys,values in data2[1].items() %}
+                  <tr>
+                    <td>{{keys}}</td>
+                    {% for val in values %}
+                    <td>{{val}}</td>
+                    {% endfor %}
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+
+              <table class="table table-bordered" style="overflow-x:auto;">
+                <thead>
+                  <tr>
+                    <th scope="col" colspan="3" style="text-align: center;">Key Technical Indicators</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for keys,values in data2[2].items() %}
+                  <tr>
+                    <td>{{keys}}</td>
+                    {% for val in values %}
+                    <td>{{val}}</td>
+                    {% endfor %}
+                  </tr>
+                  {% endfor %}
+
+
+                </tbody>
+              </table>
+
+              <table class="table table-bordered" style="overflow-x:auto;">
+                <thead>
+                  <tr>
+                    <th scope="col" colspan="2" style="text-align: center;">Futures of RELIANCE</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for keys,values in data1[3].items() %}
+                  <tr>
+                    <td>{{keys}}</td>
+                    <td>{{values}}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+        
+        
+              <table class="table table-bordered" style="overflow-x:auto;">
+                <thead>
+                  <tr>
+                    <th scope="col" colspan="2" style="text-align: center;">Put / Call Options</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for keys,values in data1[4].items() %}
+                  <tr>
+                    <td>{{keys}}</td>
+                    <td>{{values}}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+     
+ 
+            <table class="table table-bordered" style="overflow-x:auto;">
+              <thead>
+                <tr>
+                  <th scope="col" colspan="2" style="text-align: center;">Highlights & Chart Patterns</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for val in highlight %}
+                <tr>
+                  <td style="text-align: center;">{{val}}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+
+{% endblock %}

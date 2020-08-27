@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+{
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2;}
+
+tr:hover {background-color: #ddd;}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #576280;
+  color: white;
+}
+</style>
+
+{% extends 'base_template.html' %}
+
+{% block tsa %}
+
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+<div class="shadow-lg p-3 mb-5 bg-white rounded" style="width: 80%; margin-left: 10%;">
+<div class="chart" id="bargraph">
+    
+	<script style="overflow-x:auto;">
+        
+		var graphs = {{plot | safe}};
+    var config = {responsive: true}
+        Plotly.plot('bargraph',graphs,config,{});
+    </script>
+</div>
+</div>
+      
+            <table class="table table-bordered" style="overflow-x:auto;">
+                <tbody>
+                  {% for keys,values in data[1][1].items() %}
+                  <tr>
+                    <td style="text-align: center;">{{keys}}</td>
+                    {% for val in values %}
+                    <td style="text-align: center;">{{val}}</td>
+                    {% endfor %}
+                  </tr>
+                 
+                  {% endfor %}
+
+                </tbody>
+              </table>
+
+               
+            <table class="table table-bordered" style="overflow-x:auto;">
+              <thead>
+                <tr>
+                  <th scope="col" colspan="2" style="text-align: center;">{{data[2][0]}}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for val in data[2][1] %}
+                <tr>
+                  <td style="text-align: center;">{{val}}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+
+            <table class="table table-bordered" style="overflow-x:auto;">
+              <thead>
+                <tr>
+                  <th scope="col" colspan="5" style="text-align: center;">{{data[3][0]}}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for keys,values in data[3][1].items() %}
+                <tr>
+                  <td style="text-align: center;">{{keys}}</td>
+                  {% for val in values %}
+                  <td style="text-align: center;">{{val}}</td>
+                  {% endfor %}
+                </tr>
+               
+                {% endfor %}
+
+              </tbody>
+            </table>
+
+
+            <table class="table table-bordered" style="overflow-x:auto;">
+              <thead>
+                <tr>
+                  <th scope="col" colspan="6" style="text-align: center;">{{data[4][0]}}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for keys,values in data[4][1].items() %}
+                <tr>
+                  <td style="text-align: center;">{{keys}}</td>
+                  {% for val in values %}
+                  <td style="text-align: center;">{{val}}</td>
+                  {% endfor %}
+                </tr>
+               
+                {% endfor %}
+
+              </tbody>
+            </table>
+
+            <table class="table table-bordered" style="overflow-x:auto;">
+              <thead>
+                <tr>
+                  <th scope="col" colspan="5" style="text-align: center;">{{data[5][0]}}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for keys,values in data[5][1].items() %}
+                <tr>
+                  <td style="text-align: center;">{{keys}}</td>
+                  {% for val in values %}
+                  <td style="text-align: center;">{{val}}</td>
+                  {% endfor %}
+                </tr>
+               
+                {% endfor %}
+
+              </tbody>
+            </table>
+
+            <table class="table table-bordered" style="overflow-x:auto;">
+              <thead>
+                <tr>
+                  <th scope="col" colspan="5" style="text-align: center;">{{data[6][0]}}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for keys,values in data[6][1].items() %}
+                <tr>
+                  <td style="text-align: center;">{{keys}}</td>
+                  {% for val in values %}
+                  <td style="text-align: center;">{{val}}</td>
+                  {% endfor %}
+                </tr>
+               
+                {% endfor %}
+
+              </tbody>
+            </table>
+
+            <table class="table table-bordered" style="overflow-x:auto;">
+              <thead>
+                <tr>
+                  <th scope="col" colspan="6" style="text-align: center;">{{data[7][0]}}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for keys,values in data[7][1].items() %}
+                <tr>
+                  <td style="text-align: center;">{{keys}}</td>
+                  {% for val in values %}
+                  <td style="text-align: center;">{{val}}</td>
+                  {% endfor %}
+                </tr>
+               
+                {% endfor %}
+
+              </tbody>
+            </table>
+
+            <table class="table table-bordered" style="overflow-x:auto;">
+              <thead>
+                <tr>
+                  <th scope="col" colspan="6" style="text-align: center;">{{data[7][0]}}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for keys,values in data[7][1].items() %}
+                <tr>
+                  <td style="text-align: center;">{{keys}}</td>
+                  {% for val in values %}
+                  <td style="text-align: center;">{{val}}</td>
+                  {% endfor %}
+                </tr>
+               
+                {% endfor %}
+
+              </tbody>
+            </table>
+              
+            <table class="table table-bordered" style="overflow-x:auto;">
+              <thead>
+                <tr>
+                  <th scope="col" colspan="5" style="text-align: center;">{{data[8][0]}}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for keys,values in data[8][1].items() %}
+                <tr>
+                  <td style="text-align: center;">{{keys}}</td>
+                  {% for val in values %}
+                  <td style="text-align: center;">{{val}}</td>
+                  {% endfor %}
+                </tr>
+               
+                {% endfor %}
+
+              </tbody>
+            </table>
+
+            <table class="table table-bordered" style="overflow-x:auto;">
+              <thead>
+                <tr>
+                  <th scope="col" colspan="5" style="text-align: center;">{{data[9][0]}}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for keys,values in data[9][1].items() %}
+                <tr>
+                  <td style="text-align: center;">{{keys}}</td>
+                  {% for val in values %}
+                  <td style="text-align: center;">{{val}}</td>
+                  {% endfor %}
+                </tr>
+               
+                {% endfor %}
+
+              </tbody>
+            </table>
+
+            <table class="table table-bordered" style="overflow-x:auto;">
+              <thead>
+                <tr>
+                  <th scope="col" colspan="5" style="text-align: center;">{{data[10][0]}}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for keys,values in data[10][1].items() %}
+                <tr>
+                  <td style="text-align: center;">{{keys}}</td>
+                  {% for val in values %}
+                  <td style="text-align: center;">{{val}}</td>
+                  {% endfor %}
+                </tr>
+               
+                {% endfor %}
+
+              </tbody>
+            </table>
+
+            <table class="table table-bordered" style="overflow-x:auto;">
+              <thead>
+                <tr>
+                  <th scope="col" colspan="5" style="text-align: center;">{{data[11][0]}}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for keys,values in data[11][1].items() %}
+                <tr>
+                  <td style="text-align: center;">{{keys}}</td>
+                  {% for val in values %}
+                  <td style="text-align: center;">{{val}}</td>
+                  {% endfor %}
+                </tr>
+               
+                {% endfor %}
+
+              </tbody>
+            </table>
+
+            <table class="table table-bordered" style="overflow-x:auto;">
+              <thead>
+                <tr>
+                  <th scope="col" colspan="5" style="text-align: center;">{{data[12][0]}}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for keys,values in data[12][1].items() %}
+                <tr>
+                  <td style="text-align: center;">{{keys}}</td>
+                  {% for val in values %}
+                  <td style="text-align: center;">{{val}}</td>
+                  {% endfor %}
+                </tr>
+               
+                {% endfor %}
+
+              </tbody>
+            </table>
+            <table class="table table-bordered" style="overflow-x:auto;">
+              <thead>
+                <tr>
+                  <th scope="col" colspan="5" style="text-align: center;">{{data[13][0]}}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for keys,values in data[13][1].items() %}
+                <tr>
+                  <td style="text-align: center;">{{keys}}</td>
+                  {% for val in values %}
+                  <td style="text-align: center;">{{val}}</td>
+                  {% endfor %}
+                </tr>
+               
+                {% endfor %}
+
+              </tbody>
+            </table>
+
+            <table class="table table-bordered" style="overflow-x:auto;">
+              <thead>
+                <tr>
+                  <th scope="col" colspan="5" style="text-align: center;">{{data[14][0]}}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for keys,values in data[14][1].items() %}
+                <tr>
+                  <td style="text-align: center;">{{keys}}</td>
+                  {% for val in values %}
+                  <td style="text-align: center;">{{val}}</td>
+                  {% endfor %}
+                </tr>
+               
+                {% endfor %}
+
+              </tbody>
+            </table>
+
+            <table class="table table-bordered" style="overflow-x:auto;">
+              <thead>
+                <tr>
+                  <th scope="col" colspan="5" style="text-align: center;">{{data[15][0]}}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for keys,values in data[15][1].items() %}
+                <tr>
+                  <td style="text-align: center;">{{keys}}</td>
+                  {% for val in values %}
+                  <td style="text-align: center;">{{val}}</td>
+                  {% endfor %}
+                </tr>
+               
+                {% endfor %}
+
+              </tbody>
+            </table>
+
+            <table class="table table-bordered" style="overflow-x:auto;">
+              <thead>
+                <tr>
+                  <th scope="col" colspan="5" style="text-align: center;">{{data[16][0]}}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for keys,values in data[16][1].items() %}
+                <tr>
+                  <td style="text-align: center;">{{keys}}</td>
+                  {% for val in values %}
+                  <td style="text-align: center;">{{val}}</td>
+                  {% endfor %}
+                </tr>
+               
+                {% endfor %}
+
+              </tbody>
+            </table>
+
+            <table class="table table-bordered" style="overflow-x:auto;">
+              <thead>
+                <tr>
+                  <th scope="col" colspan="5" style="text-align: center;">{{data[17][0]}}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for keys,values in data[17][1].items() %}
+                <tr>
+                  <td style="text-align: center;">{{keys}}</td>
+                  {% for val in values %}
+                  <td style="text-align: center;">{{val}}</td>
+                  {% endfor %}
+                </tr>
+               
+                {% endfor %}
+
+              </tbody>
+            </table>
+
+            <table class="table table-bordered" style="overflow-x:auto;">
+              <thead>
+                <tr>
+                  <th scope="col" colspan="5" style="text-align: center;">{{data[18][0]}}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for keys,values in data[18][1].items() %}
+                <tr>
+                  <td style="text-align: center;">{{keys}}</td>
+                  {% for val in values %}
+                  <td style="text-align: center;">{{val}}</td>
+                  {% endfor %}
+                </tr>
+               
+                {% endfor %}
+
+              </tbody>
+            </table>
+
+            <table class="table table-bordered" style="overflow-x:auto;">
+              <thead>
+                <tr>
+                  <th scope="col" colspan="6" style="text-align: center;">{{data[19][0]}}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for keys,values in data[19][1].items() %}
+                <tr>
+                  <td style="text-align: center;">{{keys}}</td>
+                  {% for val in values %}
+                  <td style="text-align: center;">{{val}}</td>
+                  {% endfor %}
+                </tr>
+               
+                {% endfor %}
+
+              </tbody>
+            </table>
+
+            <table class="table table-bordered" style="overflow-x:auto;">
+              <thead>
+                <tr>
+                  <th scope="col" colspan="5" style="text-align: center;">{{data[19][0]}}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for keys,values in data[6][1].items() %}
+                <tr>
+                  <td style="text-align: center;">{{keys}}</td>
+                  {% for val in values %}
+                  <td style="text-align: center;">{{val}}</td>
+                  {% endfor %}
+                </tr>
+               
+                {% endfor %}
+
+              </tbody>
+            </table>
+
+            <table class="table table-bordered" style="overflow-x:auto;">
+              <thead>
+                <tr>
+                  <th scope="col" colspan="5" style="text-align: center;">{{data[20][0]}}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for keys,values in data[20][1].items() %}
+                <tr>
+                  <td style="text-align: center;">{{keys}}</td>
+                  {% for val in values %}
+                  <td style="text-align: center;">{{val}}</td>
+                  {% endfor %}
+                </tr>
+               
+                {% endfor %}
+
+              </tbody>
+            </table>
+
+
+
+
+{% endblock %}

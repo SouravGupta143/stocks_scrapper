@@ -1,0 +1,34 @@
+{% extends 'base_template.html' %}
+{% block part_news %}
+    <nav class="navbar navbar-light bg-light justify-content-between" style="margin-top: -5%; float: right;">
+        <form class="form-inline" method='POST' action='/part_money_news/'>
+          <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </nav>
+    <table class="table table-hover" style="width:100%;float:left;">
+      <thead>
+        <tr>
+          <th scope="col" style="width: 10%;">SNo</th>
+          <th scope="col" style="text-align:center;">Title</th>
+          <th scope="col" style="width: 10%;">Links</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for num,val in data %}
+        <tr>
+          <th scope="row">{{num}}</th>
+          {% if val[3] == 'negative' %}
+                <td><span class="border border-danger">{{val[1]}}</span></td>
+          {% elif val[3] == 'netural' %}
+                <td><span class="border border-warning">{{val[1]}}</span></td>
+          {% else %}
+                <td><span class="border border-success">{{val[1]}}</span></td>
+          {% endif %}
+        <td style="width: 10%;"><a href={{val[4]}}>click here</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+{% endblock %}
